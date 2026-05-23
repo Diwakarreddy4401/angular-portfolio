@@ -1,0 +1,69 @@
+.about {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 24px;
+}
+
+.bio-card,
+.skills-card {
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.bio-card {
+  display: grid;
+  gap: 20px;
+}
+
+.bio-card p {
+  color: var(--muted-strong);
+  font-size: 1.06rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.stat {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.stat strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.skills-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .about-grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

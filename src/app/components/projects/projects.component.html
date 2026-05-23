@@ -1,0 +1,26 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Projects</span>
+      <h2>Selected builds with real product workflows.</h2>
+    </div>
+
+    <div class="project-grid" @staggerFadeUp>
+      <article *ngFor="let project of profile.projects" class="project-card glass stagger-item reveal">
+        <span class="accent" [style.background]="project.accent"></span>
+        <div class="project-body">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+
+          <div class="project-stack">
+            <span *ngFor="let tech of project.stack">{{ tech }}</span>
+          </div>
+
+          <ul class="project-highlights">
+            <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

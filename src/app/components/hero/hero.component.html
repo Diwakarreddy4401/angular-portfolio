@@ -1,0 +1,30 @@
+<section id="home" class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+
+  <div class="hero-content container" @fadeUp>
+    <div class="hero-copy">
+      <span class="eyebrow">Portfolio / 2026</span>
+      <h1>{{ profile.name }}</h1>
+      <p class="title">{{ profile.title }} &middot; <span>{{ typedText }}</span><span class="cursor">|</span></p>
+      <p class="summary">{{ profile.bio }}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" [href]="profile.resumeUrl" download>Download Resume</a>
+        <a class="btn btn-ghost" href="#contact">Contact Me</a>
+      </div>
+
+      <div class="socials" aria-label="Social links" *ngIf="profile.socialLinks.length">
+        <a *ngFor="let link of profile.socialLinks" [href]="link.url" target="_blank" rel="noreferrer" [attr.aria-label]="link.label">
+          <svg *ngIf="link.label === 'GitHub'" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.5v-1.92c-2.78.62-3.37-1.22-3.37-1.22-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.04-2.75-.1-.26-.45-1.3.1-2.7 0 0 .85-.28 2.78 1.05A9.43 9.43 0 0 1 12 6.94c.86 0 1.72.12 2.53.34 1.93-1.33 2.78-1.05 2.78-1.05.55 1.4.2 2.44.1 2.7.65.72 1.04 1.63 1.04 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.95.68 1.92v2.83c0 .28.18.6.69.5A10.06 10.06 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+          <svg *ngIf="link.label === 'LinkedIn'" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.7V20h3.24V8.98ZM7.2 5.57A1.87 1.87 0 1 0 3.45 5.55 1.87 1.87 0 0 0 7.2 5.57ZM20.55 13.68c0-2.96-1.58-4.34-3.7-4.34-1.7 0-2.46.94-2.88 1.6V8.98h-3.1V20h3.23v-5.45c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.24v-6.32h-.63Z"/></svg>
+          <!-- <svg *ngIf="link.label === 'Twitter'" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.1l-6.78 7.76L21.82 21h-6.24l-4.89-6.39L5.1 21H2l7.25-8.3L1.61 3h6.4l4.42 5.84L17.53 3Zm-1.09 16.2h1.72L7.07 4.71H5.22L16.44 19.2Z"/></svg> -->
+        </a>
+      </div>
+    </div>
+
+    <div class="avatar-wrap" aria-label="Profile photo">
+      <img [src]="profile.avatarUrl" [alt]="profile.name + ' profile photo'" class="avatar">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section id="stack" class="section stack">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Tech Stack</span>
+      <h2>Tools I use to ship reliable products.</h2>
+    </div>
+
+    <div class="stack-groups" @staggerFadeUp>
+      <article *ngFor="let group of profile.techStack" class="stack-group glass stagger-item reveal">
+        <header>
+          <h3>{{ group.group }}</h3>
+          <span>{{ group.items.length }} technologies</span>
+        </header>
+
+        <div class="tech-grid">
+          <div *ngFor="let tech of group.items" class="tech-tile">
+            <div class="tech-icon">{{ tech.icon }}</div>
+            <span>{{ tech.name }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section id="experience" class="section experience">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Work Experience</span>
+      <h2>Enterprise-grade engineering with product polish.</h2>
+    </div>
+
+    <div class="timeline" @staggerFadeUp>
+      <article *ngFor="let item of profile.experience; let index = index" class="timeline-item stagger-item reveal" [class.alt]="index % 2 === 1">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card glass">
+          <span class="duration">{{ item.duration }}</span>
+          <h3>{{ item.company }}</h3>
+          <p class="role">{{ item.role }} &middot; {{ item.location }}</p>
+          <ul>
+            <li *ngFor="let achievement of item.achievements">{{ achievement }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<header class="navbar" [class.navbar-scrolled]="isScrolled">
+  <a class="brand" href="#home" (click)="closeMenu()" aria-label="Go to home">
+    <span class="brand-mark">DR</span>
+    <span>{{ profile.name }}</span>
+  </a>
+
+  <div class="nav-controls">
+    <button
+      class="theme-toggle"
+      type="button"
+      (click)="toggleTheme()"
+      [attr.aria-label]="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+      [attr.title]="theme === 'dark' ? 'Light mode' : 'Dark mode'"
+    >
+      <svg *ngIf="theme === 'dark'" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5a1 1 0 0 1 1-1h0a1 1 0 1 1-2 0 1 1 0 0 1 1 1Zm0 15a1 1 0 0 1-1 1h0a1 1 0 1 1 2 0 1 1 0 0 1-1-1Zm8-8a1 1 0 0 1 1-1h0a1 1 0 1 1 0 2 1 1 0 0 1-1-1ZM3 12a1 1 0 0 1 1-1h0a1 1 0 1 1 0 2 1 1 0 0 1-1-1Zm14.95-5.95a1 1 0 0 1 1.41-1.41h0a1 1 0 0 1-1.41 1.41Zm-11.9 11.9a1 1 0 0 1-1.41 1.41h0a1 1 0 0 1 1.41-1.41Zm11.9 0a1 1 0 0 1 1.41 1.41h0a1 1 0 0 1-1.41-1.41ZM6.05 6.05a1 1 0 0 1-1.41-1.41h0a1 1 0 0 1 1.41 1.41ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+      </svg>
+      <svg *ngIf="theme === 'light'" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z" />
+      </svg>
+    </button>
+
+    <button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="nav-links" [class.open]="isMenuOpen" aria-label="Primary navigation">
+    <a
+      *ngFor="let item of navItems"
+      [href]="'#' + item.id"
+      [class.active]="activeSection === item.id"
+      (click)="closeMenu()"
+    >
+      {{ item.label }}
+    </a>
+  </nav>
+</header>

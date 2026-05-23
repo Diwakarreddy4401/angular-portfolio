@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+main {
+  overflow: hidden;
+}
+
+:host ::ng-deep .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.8,.2,1);
+}
+
+:host ::ng-deep .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
