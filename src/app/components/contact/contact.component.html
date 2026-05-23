@@ -12,43 +12,19 @@
         <button class="btn btn-ghost" type="button" (click)="copyEmail()">{{ copied ? 'Copied' : 'Copy' }}</button>
       </div>
 
-      <div class="contact-layout">
-        <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate>
-          <label>
-            <span>Name</span>
-            <input type="text" formControlName="name" placeholder="Your name">
-          </label>
-
-          <label>
-            <span>Email</span>
-            <input type="email" formControlName="email" placeholder="you@example.com">
-          </label>
-
-          <label class="message-field">
-            <span>Message</span>
-            <textarea formControlName="message" rows="5" placeholder="Tell me about your project"></textarea>
-          </label>
-
-          <button class="btn btn-primary" type="submit" [disabled]="isSending">
-            {{ isSending ? 'Sending...' : 'Send Message' }}
-          </button>
-          <p *ngIf="sent" class="sent-message">Message prepared successfully. I'll follow up through email.</p>
-        </form>
-
-        <aside class="contact-meta">
-          <div>
-            <span>Phone</span>
-            <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
-          </div>
-          <div>
-            <span>Location</span>
-            <p>{{ profile.location }}</p>
-          </div>
-          <div class="socials">
-            <a *ngFor="let link of profile.socialLinks" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
-          </div>
-        </aside>
-      </div>
+      <aside class="contact-meta">
+        <div>
+          <span>Phone</span>
+          <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+        </div>
+        <div>
+          <span>Location</span>
+          <p>{{ profile.location }}</p>
+        </div>
+        <div class="socials">
+          <a *ngFor="let link of profile.socialLinks" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
