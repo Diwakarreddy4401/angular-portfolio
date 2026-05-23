@@ -59,9 +59,8 @@ export const PROFILE: Profile = {
   name: 'Diwakar Reddy',
   title: 'Full Stack Developer',
   tagline: [
-    'Senior Angular Developer',
-    'Frontend Developer',
-    'Spring Boot REST APIs',
+    'Angular Frontend Developer',
+    'Spring Boot API Developer',
   ],
   avatarUrl: 'assets/diwakar_photo2.jpeg',
   resumeUrl: 'assets/Diwakar_Reddy_Java_Angular_full_stack_developer_Resume.pdf',

@@ -53,6 +53,7 @@ h1 {
   color: var(--muted-strong);
   font-size: clamp(1.14rem, 2.2vw, 1.65rem);
   font-weight: 700;
+  min-height: 1.5em;
 }
 
 .title span {
